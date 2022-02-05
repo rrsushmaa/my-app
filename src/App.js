@@ -1,9 +1,15 @@
+import Starter from "./Starter";
+
 function App() {
-  return (
-    <div>
-      <h2>Let's get started!</h2>
-    </div>
-  );
+    return (
+        <div>
+            <Starter />
+            <Starter />
+            <Starter />
+            <Starter />
+        </div>
+)
+    ;
 }
 
 export default App;
