@@ -1,4 +1,4 @@
-import ExpenseItem from "./Components/ExpenseItem";
+import Expenses from "./Expenses";
 
 function App() {
 
@@ -25,10 +25,8 @@ function App() {
     ]
 
     return (<div>
-        <h2>Let's get started!!</h2>
-        <ExpenseItem date={expenses[0].date} title={expenses[0].title} price={expenses[0].amount}/>
-        <ExpenseItem date={expenses[1].date} title={expenses[1].title} price={expenses[1].amount}/>
-        <ExpenseItem date={expenses[2].date} title={expenses[2].title} price={expenses[2].amount}/>
+        <h2>Expense Report</h2>
+        <Expenses expenses={expenses}/>
     </div>);
 }
 
