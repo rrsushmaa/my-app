@@ -1,15 +1,10 @@
-import Starter from "./Starter";
-
 function App() {
     return (
         <div>
-            <Starter />
-            <Starter />
-            <Starter />
-            <Starter />
+            <h2>Let's get started!</h2>
         </div>
-)
-    ;
+    )
+        ;
 }
 
 export default App;
