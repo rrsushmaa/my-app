@@ -30,9 +30,15 @@ const App = () => {
         },
     ]
 
+    const submitNewExpenseHandler = (expenseData) => {
+        console.log(expenseData);
+        expenses.push(expenseData);
+        console.log(expenses);
+    }
+
     return (<div>
         <h2>Expense Report</h2>
-        <NewExpense></NewExpense>
+        <NewExpense onSubmitNewExpense = {submitNewExpenseHandler}></NewExpense>
         <Expenses expenses={expenses}/>
     </div>);
 }

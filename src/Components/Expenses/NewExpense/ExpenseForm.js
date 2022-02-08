@@ -2,19 +2,19 @@ import './ExpenseForm.css';
 import './NewExpense.css'
 import {useState} from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (prop) => {
     const [newTitle, setNewTitle] = useState('');
+    const [newAmount, setNewAmount] = useState('');
+    const [newDate, setNewDate] = useState('');
 
     const titleChangeHandler = (event) => {
         setNewTitle(event.target.value);
     }
 
-    const [newAmount, setNewAmount] = useState('');
     const amountChangeHandler = (event) => {
         setNewAmount(event.target.value);
     }
 
-    const [newDate, setNewDate] = useState('');
     const dateChangeHandler = (event) => {
         setNewDate(event.target.value);
     }
@@ -24,8 +24,7 @@ const ExpenseForm = () => {
         const expenseData = {
             title: newTitle, amount: newAmount, date: new Date(newDate)
         }
-
-        console.log(expenseData);
+        prop.onSaveExpenseData(expenseData);
     }
 
     const resetHandler = (event) => {
