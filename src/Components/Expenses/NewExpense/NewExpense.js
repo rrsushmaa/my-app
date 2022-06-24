@@ -5,14 +5,13 @@ const NewExpense = (prop) => {
     const saveExpenseHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
-            id : Math.random().toString()
+            id: Math.random().toString()
         };
         prop.onSubmitNewExpense(expenseData);
-        console.log(expenseData);
     };
     return (
         <div className="new-expense">
-            <ExpenseForm onSaveExpenseData = {saveExpenseHandler} />
+            <ExpenseForm onSaveExpenseData={saveExpenseHandler}/>
         </div>
     );
 }

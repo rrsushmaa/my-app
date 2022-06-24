@@ -1,9 +1,10 @@
 import Expenses from "./Components/Expenses/Expenses";
 import NewExpense from "./Components/Expenses/NewExpense/NewExpense";
+import {useState} from "react";
 
 const App = () => {
 
-    const expenses = [
+    const initialExpenses = [
         {
             id: 'e1',
             title: 'Toilet Paper',
@@ -29,17 +30,18 @@ const App = () => {
             date: new Date(2022, 2, 6),
         },
     ]
+    const [overallExpenses, setOverallExpenses] = useState(initialExpenses);
 
     const submitNewExpenseHandler = (expenseData) => {
-        console.log(expenseData);
-        expenses.push(expenseData);
-        console.log(expenses);
+        setOverallExpenses((prevExpenses) => {
+            return [expenseData, ...prevExpenses];
+        });
     }
 
     return (<div>
         <h2>Expense Report</h2>
-        <NewExpense onSubmitNewExpense = {submitNewExpenseHandler}></NewExpense>
-        <Expenses expenses={expenses}/>
+        <NewExpense onSubmitNewExpense={submitNewExpenseHandler}/>
+        <Expenses expenses={overallExpenses}/>
     </div>);
 }
 
